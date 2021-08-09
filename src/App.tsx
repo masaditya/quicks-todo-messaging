@@ -22,6 +22,8 @@ function App() {
   }
 `;
   const [showButtons, setShowButtons] = useState(false);
+  const [showInbox, setShowInbox] = useState(false);
+  const [showTodo, setShowTodo] = useState(false);
   return (
     <div tw="min-h-screen">
       <button
@@ -48,13 +50,17 @@ function App() {
       {showButtons && (
         <>
           <button
+            onClick={() => {
+              setShowInbox(!showInbox);
+              setShowTodo(false);
+            }}
             css={css`
               animation: ${bounce} 1s ease;
             `}
             style={{
               position: "fixed",
               bottom: 25,
-              right: 75,
+              right: 100,
               backgroundColor: "#F2F2F2",
             }}
             tw="h-12 w-12 flex items-center justify-center rounded-full fixed"
@@ -76,13 +82,17 @@ function App() {
           </button>
 
           <button
+            onClick={() => {
+              setShowTodo(!showTodo);
+              setShowInbox(false);
+            }}
             css={css`
               animation: ${bounce} 1s ease;
             `}
             style={{
               position: "fixed",
               bottom: 25,
-              right: 125,
+              right: 175,
               backgroundColor: "#F2F2F2",
             }}
             tw="h-12 w-12 flex items-center justify-center rounded-full fixed"
@@ -104,7 +114,7 @@ function App() {
           </button>
         </>
       )}
-      <Inbox />
+      {showInbox && <Inbox />}
     </div>
   );
 }
