@@ -4,16 +4,17 @@ import tw from "twin.macro";
 interface IChatBalloon {
   position?: "left" | "right";
   text?: string;
+  sender ?: string;
 }
 
-export default function ChatBalloon({ position, text }: IChatBalloon) {
+export default function ChatBalloon({ position, text, sender }: IChatBalloon) {
   return (
     <div>
       <p
-        tw="font-semibold text-green-300"
+        tw="font-semibold text-gray-400"
         style={{ textAlign: position === "left" ? "left" : "right" }}
       >
-        {position === "left" ? "John Doe" : "You"}
+        {position === "left" ? (sender || "User") : "You"}
       </p>
       <div
         tw="flex mb-2.5"
