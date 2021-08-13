@@ -3,6 +3,7 @@ import { useState } from "react";
 import { css, keyframes } from "@emotion/react";
 import tw from "twin.macro";
 import Inbox from "./components/inbox";
+import Task from "./components/task";
 function App() {
   const bounce = keyframes`
   from, 20%, 53%, 80%, to {
@@ -63,7 +64,7 @@ function App() {
               right: 100,
               backgroundColor: "#F2F2F2",
             }}
-            tw="h-12 w-12 flex items-center justify-center rounded-full fixed"
+            tw="h-12 w-12 flex items-center justify-center rounded-full fixed transition duration-500 ease-in-out"
           >
             <svg
               width="25"
@@ -95,7 +96,7 @@ function App() {
               right: 175,
               backgroundColor: "#F2F2F2",
             }}
-            tw="h-12 w-12 flex items-center justify-center rounded-full fixed"
+            tw="h-12 w-12 flex items-center justify-center rounded-full fixed transition duration-500 ease-in-out"
           >
             <svg
               width="25"
@@ -115,6 +116,7 @@ function App() {
         </>
       )}
       {showInbox && <Inbox />}
+      {showTodo && <Task />}
     </div>
   );
 }
