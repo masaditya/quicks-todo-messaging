@@ -12,17 +12,17 @@ export default function Inbox() {
   const [chats, setChats] = useState([
     {
       position: "left",
-      text: "Hello There!",
+      text: "Halo yang ada disana!",
       sender: "Alex",
     },
     {
       position: "left",
-      text: "Hello There!",
+      text: "Halo yang ada disana!",
       sender: "Alex",
     },
     {
       position: "left",
-      text: "Hello There!",
+      text: "Halo yang ada disana!",
       sender: "Alex",
     },
   ]);
@@ -102,7 +102,7 @@ export default function Inbox() {
               type="text"
               value={textChat}
               onChange={(e) => setTextChat(e.target.value)}
-              placeholder="Type a new message"
+              placeholder="Tulis pesan baru"
               onKeyDown={(e) => e.key === "Enter" && handleSendChats()}
             />
             <button
