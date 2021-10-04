@@ -136,7 +136,7 @@ export default function TodoForm({ setTodo, setShow }: any) {
             </svg>
             {!isEdit ? (
               <p onClick={() => setIsEdit(!isEdit)} tw="ml-5">
-                {description === "" ? "No Description" : description}
+                {description === "" ? "Tidak ada deskripsi" : description}
               </p>
             ) : (
               <input
