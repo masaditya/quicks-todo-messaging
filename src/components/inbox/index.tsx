@@ -32,6 +32,7 @@ export default function Inbox() {
     setTextChat("");
   }, [chats, textChat]);
 
+  console.log(chats, textChat);
   return (
     <div
       tw="border-2 rounded-md "
@@ -59,7 +60,7 @@ export default function Inbox() {
               </div>
             </div>
           </div>
-
+            
           <ChatItem
             handleSelectChat={setSelectedChat}
             isRead
