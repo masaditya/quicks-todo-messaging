@@ -6,26 +6,30 @@ import ChatItem from "./Chat/ChatItem";
 import ChatHeader from "./Chat/ChatHeader";
 import ChatBalloon from "./Chat/ChatBalloon";
 
+const INIT_CHATS : {
+  position: string,
+  text: string,
+  sender: string
+}[] = [{
+  position: "left",
+  text: "Hello There!",
+  sender: "Alex",
+},
+{
+  position: "left",
+  text: "Hello There!",
+  sender: "Alex",
+},
+{
+  position: "left",
+  text: "Hello There!",
+  sender: "Alex",
+}]
+
 export default function Inbox() {
   const [selectedChat, setSelectedChat] = useState<any>();
   const [textChat, setTextChat] = useState<string>("");
-  const [chats, setChats] = useState([
-    {
-      position: "left",
-      text: "Hello There!",
-      sender: "Alex",
-    },
-    {
-      position: "left",
-      text: "Hello There!",
-      sender: "Alex",
-    },
-    {
-      position: "left",
-      text: "Hello There!",
-      sender: "Alex",
-    },
-  ]);
+  const [chats, setChats] = useState(INIT_CHATS);
 
   const handleSendChats = useCallback(() => {
     setChats([...chats, { position: "right", text: textChat, sender: "You" }]);
